@@ -1,0 +1,7 @@
+{
+  "require": {
+    "components/jquery": "1.11.*",
+    "raveren/kint": "v0.9",
+    "twbs/bootstrap-sass": "3.*"
+  }
+}

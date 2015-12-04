@@ -1,0 +1,46 @@
+// Colours
+
+
+// Breakpoints
+$screen-xs: 320px;
+$screen-sm: 480px;
+$screen-md: 680px;
+$screen-lg: 880px;
+
+$grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         24px;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-sm;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-md;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+// Small screen / tablet
+$container-tablet:             (($screen-sm - $grid-gutter-width));
+//** For `$screen-sm-min` and up.
+$container-sm:                 $container-tablet;
+
+// Medium screen / desktop
+$container-desktop:            (($screen-md - $grid-gutter-width));
+//** For `$screen-md-min` and up.
+$container-md:                 $container-desktop;
+
+// Large screen / wide desktop
+$container-large-desktop:      (($screen-lg));
+//** For `$screen-lg-min` and up.
+$container-lg:                 $container-large-desktop;
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700,700italic,300,300italic);
+$font-body: "Roboto", Helvetica, Arial, sans-serif;
+
+// Imports
+$icon-font-path: "../vendor/twbs/bootstrap-sass/assets/fonts/bootstrap/";
+@import "bootstrap/variables";
