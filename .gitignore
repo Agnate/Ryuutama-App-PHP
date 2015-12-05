@@ -2,3 +2,4 @@
 composer.lock
 public/vendor/
 config.php
+public/bower_components/

@@ -1,0 +1,22 @@
+{
+  "name": "Ryuutama App",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Agnate/Ryuutama-App",
+  "authors": [
+    "Paul Dinelle <pauldinelle@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "datatables.net": "~1.10.10",
+    "datatables.net-bs": "~1.10.9",
+    "datatables.net-responsive": "~2.0.0",
+    "datatables.net-responsive-bs": "~2.0.0"
+  }
+}
