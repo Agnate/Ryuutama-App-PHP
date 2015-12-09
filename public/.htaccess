@@ -1,0 +1,11 @@
+Options +FollowSymLinks -Indexes
+RewriteEngine On
+
+# For some unknown reason this requires the "api" folder to be created to work...
+<IfModule mod_rewrite.c>
+  # Run everything else but real files through api.php
+  # Uncomment the below condition if you ever figure out how to remove the empty "api" folder
+  # RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^api/(.*)$ /api.php?path=$1 [QSA]
+</IfModule>

@@ -24,6 +24,7 @@ d($items);
     
     <link rel="stylesheet" type="text/css" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="bower_components/datatables.net-responsive-bs/css/responsive.bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="bower_components/datatables.net-colreorder-bs/css/colReorder.bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script src="vendor/components/jquery/jquery.min.js"></script>
@@ -32,8 +33,11 @@ d($items);
     <script src="bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
     <script src="bower_components/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="bower_components/datatables.net-colreorder/js/dataTables.colReorder.min.js"></script>
+    <script src="bower_components/datatables.net-colreorder/js/dataTables.colReorder.min.js"></script>
+    <script src="js/dataTables.accent-neutralise.js"></script>
+    <script src="js/dataTables.html.js"></script>
     <script src="js/inventory.js"></script>
-
     
   </head>
   <body>
@@ -88,28 +92,30 @@ d($items);
               <h4 class="modal-title" id="AddItem">Add item</h4>
             </div>
             <div class="modal-body">
-              <table class="table table-striped table-condensed items">
-                <thead>
-                  <tr>
-                    <th class="col-add"></th>
-                    <th class="col-name">Name</th>
-                    <th class="col-cost">Cost</th>
-                    <th class="col-size">Size</th>
-                    <!-- <th class="col-description">Description</th> -->
-                  </tr>
-                </thead>
-                <tbody>
-                  <?php foreach ($item_templates as $item): ?>
+              <form>
+                <table class="table table-striped table-condensed items">
+                  <thead>
                     <tr>
-                      <td class="col-add"></td>
-                      <td class="col-name"><?php print $item->name; ?></td>
-                      <td class="col-cost"><?php print $item->cost; ?></td>
-                      <td class="col-size"><?php print $item->size; ?></td>
-                      <!-- <td class="col-description"><?php // print $item->description; ?></td> -->
+                      <th class="col-add"></th>
+                      <th class="col-name">Name</th>
+                      <th class="col-cost">Cost</th>
+                      <th class="col-size">Size</th>
+                      <!-- <th class="col-description">Description</th> -->
                     </tr>
-                  <?php endforeach; ?>
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($item_templates as $item): ?>
+                      <tr>
+                        <td class="col-add"><input type="checkbox" name="item-template-<?php print $item->name_id; ?>" class="item-template item-template-<?php print $item->name_id; ?>" value="0"/></td>
+                        <td class="col-name"><?php print $item->name; ?></td>
+                        <td class="col-cost"><?php print $item->cost; ?></td>
+                        <td class="col-size"><?php print $item->size; ?></td>
+                        <!-- <td class="col-description"><?php // print $item->description; ?></td> -->
+                      </tr>
+                    <?php endforeach; ?>
+                  </tbody>
+                </table>
+              </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>

@@ -31,6 +31,4 @@ class Item extends Entity {
     // Perform regular constructor.
     parent::__construct($data);
   }
-
-  
 }
